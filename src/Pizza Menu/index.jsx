@@ -1,10 +1,14 @@
 import React from "react";
+import Header from "./Header";
+import Menu from "./Menu";
+import Footer from "./Footer";
 
 const PizzaMenu = () => {
   return (
-    <div>
-      <h1>Focaccia</h1>
-      <img src="/public/pizzaImages/focaccia.jpg" />
+    <div className="container">
+      <Header />
+      <Menu />
+      <Footer />
     </div>
   );
 };
