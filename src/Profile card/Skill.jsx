@@ -1,10 +1,10 @@
 import React from "react";
 
-const Skill = (props) => {
+const Skill = ({ skill, bgcolor }) => {
   return (
-    <div className="skill" style={{ backgroundColor: props.bgcolor }}>
-      <span>{props.skill}</span>
-      <span>{props.emoji}</span>
+    <div className="skill" style={{ backgroundColor: bgcolor }}>
+      <span>{skill}</span>
+      {/* <span>{emoji}</span> */}
     </div>
   );
 };
