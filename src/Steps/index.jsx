@@ -10,6 +10,13 @@ const Steps = () => {
     "Invest your new income 🤑",
   ];
 
+  const handlePrevious = () => {
+    alert("Previous");
+  };
+  const handleNext = () => {
+    alert("Next");
+  };
+
   return (
     <div className="steps">
       <div className="numbers">
@@ -23,10 +30,16 @@ const Steps = () => {
       </p>
 
       <div className="buttons">
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button
+          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+          onClick={handlePrevious}
+        >
           Previous
         </button>
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button
+          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+          onClick={handleNext}
+        >
           Next
         </button>
       </div>
