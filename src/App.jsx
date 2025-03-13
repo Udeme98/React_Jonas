@@ -1,7 +1,12 @@
 import React from "react";
+import Steps from "./Steps";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <Steps />
+    </div>
+  );
 };
 
 export default App;
