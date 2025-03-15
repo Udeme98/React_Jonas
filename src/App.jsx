@@ -1,12 +1,10 @@
 import React from "react";
-import Steps from "./02-Steps";
-import DateCounter from "./Challenges/Date Counter";
+import TravelList from "./04-Travel list";
 
 const App = () => {
   return (
     <div>
-      {/* <Steps /> */}
-      <DateCounter />
+      <TravelList />
     </div>
   );
 };
