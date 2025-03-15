@@ -1,5 +1,5 @@
 import React from "react";
-import Steps from "./Steps";
+import Steps from "./02-Steps";
 import DateCounter from "./Challenges/Date Counter";
 
 const App = () => {
