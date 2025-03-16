@@ -6,9 +6,7 @@ import DateCounter from "./Challenges/Date Counter";
 const App = () => {
   return (
     <div>
-      {/* <TravelList /> */}
-      {/* <FlashCards /> */}
-      <DateCounter />
+      <TravelList />
     </div>
   );
 };

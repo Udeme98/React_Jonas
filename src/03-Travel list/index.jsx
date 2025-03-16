@@ -11,7 +11,7 @@ const Logo = () => {
   return <h1>🌴 Far Away 👜</h1>;
 };
 
-const Form = () => {
+const Form = ({ addItems }) => {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -21,7 +21,9 @@ const Form = () => {
     if (!description) return;
 
     const newItem = { description, quantity, packed: false, id: Date.now() };
-    console.log(newItem);
+    // console.log(newItem);
+
+    addItems(newItem);
 
     setDescription("");
     setQuantity(1);
@@ -51,16 +53,18 @@ const Form = () => {
   );
 };
 
-const ParkingList = () => {
+const ParkingList = ({ items }) => {
+  // console.log(items);
   return (
     <div className="list">
       <ul>
-        {initialItems.map((item) => (
+        {items.map((item) => (
           <Item item={item} key={item.id} />
         ))}
       </ul>
     </div>
   );
+
   function Item({ item }) {
     return (
       <li>
@@ -82,11 +86,17 @@ const Footer = () => {
 };
 
 const TravelList = () => {
+  const [items, setItems] = useState([]);
+
+  const addItems = (item) => {
+    setItems((items) => [...items, item]);
+  };
+
   return (
     <div className="app">
       <Logo />
-      <Form />
-      <ParkingList />
+      <Form addItems={addItems} />
+      <ParkingList items={items} />
       <Footer />
     </div>
   );
