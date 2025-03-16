@@ -4,9 +4,10 @@ import "./flashCard.css";
 const FlashCards = () => {
   const [selectedId, setSelectedId] = useState(null);
 
-  //   const handleClick = () => {
-  //     setSelectedId(selectedId === ques.id ? null : ques.id);
-  //   };
+  const handleClick = (id) => {
+    setSelectedId(id !== selectedId ? id : null);
+    // console.log(id);
+  };
 
   const questions = [
     {
@@ -54,9 +55,10 @@ const FlashCards = () => {
               className={`flashcard ${
                 selectedId === ques.id ? "selected" : ""
               }`}
-              onClick={() =>
-                setSelectedId(selectedId === ques.id ? null : ques.id)
-              }
+              onClick={() => handleClick(ques.id)}
+              // onClick={() =>
+              //   setSelectedId(selectedId === ques.id ? null : ques.id)
+              // }
             >
               <p>{selectedId === ques.id ? ques.answer : ques.question}</p>
             </div>
