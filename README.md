@@ -9,3 +9,4 @@ Tutor: Jonas Schmedtmann
 2. Working with styles in React
 3. Working with Components, Props, and JSX
 4. State, Events and Forms
+5. Thinking in React: State Management
