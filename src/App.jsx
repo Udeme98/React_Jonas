@@ -1,6 +1,6 @@
 import React from "react";
 import TravelList from "./04-Travel list";
-import FlashCards from "./FlashCards";
+import FlashCards from "./Exercises/FlashCards";
 
 const App = () => {
   return (
