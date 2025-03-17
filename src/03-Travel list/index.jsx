@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "./travel.css";
-
-const Logo = () => {
-  return <h1>🌴 Far Away 👜</h1>;
-};
+import { Logo } from "./Logo";
 
 const Form = ({ addItems }) => {
   const [description, setDescription] = useState("");
@@ -47,7 +44,7 @@ const Form = ({ addItems }) => {
   );
 };
 
-const ParkingList = ({ items, deleteItem, handleToggle }) => {
+const ParkingList = ({ items, deleteItem, handleToggle, clearList }) => {
   const [sortBy, setSortBy] = useState("input");
   // console.log(items);
 
@@ -83,6 +80,7 @@ const ParkingList = ({ items, deleteItem, handleToggle }) => {
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
+        <button onClick={clearList}>Clear List</button>
       </div>
     </div>
   );
@@ -150,6 +148,13 @@ const TravelList = () => {
     );
   };
 
+  const clearList = () => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+    if (confirmed) setItems([]);
+  };
+
   return (
     <div className="app">
       <Logo />
@@ -158,6 +163,7 @@ const TravelList = () => {
         items={items}
         deleteItem={deleteItem}
         handleToggle={handleToggle}
+        clearList={clearList}
       />
       <Footer items={items} />
     </div>
