@@ -81,10 +81,29 @@ const ParkingList = ({ items, deleteItem, handleToggle }) => {
   }
 };
 
-const Footer = () => {
+const Footer = ({ items }) => {
+  const numItems = items.length;
+  const numPacked = items.filter((item) => item.packed).length;
+  const percentage = Math.round((numPacked / numItems) * 100);
+
+  if (!items.length) {
+    return (
+      <footer className="footer">
+        <em>Start adding some items to your packing list🚀</em>
+      </footer>
+    );
+  }
+
   return (
     <footer className="footer">
-      <em>You have X item on your list, you already packed X(X%)</em>
+      <em>
+        {percentage === 100
+          ? "You got everything! Ready to go✈️"
+          : ` You have ${numItems} item${
+              numItems !== 1 ? "s" : ""
+            } on your list, you
+        already packed ${numPacked} (${percentage}%)`}
+      </em>
     </footer>
   );
 };
@@ -117,7 +136,7 @@ const TravelList = () => {
         deleteItem={deleteItem}
         handleToggle={handleToggle}
       />
-      <Footer />
+      <Footer items={items} />
     </div>
   );
 };
