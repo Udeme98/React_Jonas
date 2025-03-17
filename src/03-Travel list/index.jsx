@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import "./travel.css";
 
-const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: false },
-  { id: 2, description: "Socks", quantity: 12, packed: true },
-  { id: 3, description: "Socks", quantity: 12, packed: true },
-];
-
 const Logo = () => {
   return <h1>🌴 Far Away 👜</h1>;
 };
