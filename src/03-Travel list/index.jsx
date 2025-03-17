@@ -53,25 +53,25 @@ const Form = ({ addItems }) => {
   );
 };
 
-const ParkingList = ({ items }) => {
+const ParkingList = ({ items, deleteItem }) => {
   // console.log(items);
   return (
     <div className="list">
       <ul>
         {items.map((item) => (
-          <Item item={item} key={item.id} />
+          <Item item={item} key={item.id} deleteItem={deleteItem} />
         ))}
       </ul>
     </div>
   );
 
-  function Item({ item }) {
+  function Item({ item, deleteItem }) {
     return (
       <li>
         <span style={item.packed ? { textDecoration: "line-through" } : {}}>
           {item.quantity} {item.description}
         </span>
-        <button>❌</button>
+        <button onClick={() => deleteItem(item.id)}>❌</button>
       </li>
     );
   }
@@ -92,11 +92,15 @@ const TravelList = () => {
     setItems((items) => [...items, item]);
   };
 
+  const deleteItem = (id) => {
+    setItems((items) => items.filter((item) => item.id !== id));
+  };
+
   return (
     <div className="app">
       <Logo />
       <Form addItems={addItems} />
-      <ParkingList items={items} />
+      <ParkingList items={items} deleteItem={deleteItem} />
       <Footer />
     </div>
   );
