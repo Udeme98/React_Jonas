@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./travel.css";
-import { Logo } from "./Logo";
+import Logo from "./Logo";
 
 const Form = ({ addItems }) => {
   const [description, setDescription] = useState("");
