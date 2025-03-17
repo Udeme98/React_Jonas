@@ -47,21 +47,31 @@ const Form = ({ addItems }) => {
   );
 };
 
-const ParkingList = ({ items, deleteItem }) => {
+const ParkingList = ({ items, deleteItem, handleToggle }) => {
   // console.log(items);
   return (
     <div className="list">
       <ul>
         {items.map((item) => (
-          <Item item={item} key={item.id} deleteItem={deleteItem} />
+          <Item
+            item={item}
+            key={item.id}
+            deleteItem={deleteItem}
+            handleToggle={handleToggle}
+          />
         ))}
       </ul>
     </div>
   );
 
-  function Item({ item, deleteItem }) {
+  function Item({ item, deleteItem, handleToggle }) {
     return (
       <li>
+        <input
+          type="checkbox"
+          checked={item.packed}
+          onChange={() => handleToggle(item.id)}
+        />
         <span style={item.packed ? { textDecoration: "line-through" } : {}}>
           {item.quantity} {item.description}
         </span>
@@ -90,11 +100,23 @@ const TravelList = () => {
     setItems((items) => items.filter((item) => item.id !== id));
   };
 
+  const handleToggle = (id) => {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  };
+
   return (
     <div className="app">
       <Logo />
       <Form addItems={addItems} />
-      <ParkingList items={items} deleteItem={deleteItem} />
+      <ParkingList
+        items={items}
+        deleteItem={deleteItem}
+        handleToggle={handleToggle}
+      />
       <Footer />
     </div>
   );
