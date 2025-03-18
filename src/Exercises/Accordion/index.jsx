@@ -6,7 +6,7 @@ const Accordion = () => {
   return (
     <div>
       {accordion.map((el, i) => (
-        <AccordionItem key={i} num={i} title={el.title} text={el.text} />
+        <AccordionItem key={el.title} num={i} title={el.title} text={el.text} />
       ))}
     </div>
   );
