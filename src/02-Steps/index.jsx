@@ -37,22 +37,46 @@ const Steps = () => {
           </p>
 
           <div className="buttons">
-            <button
+            {/* <button
               style={{ backgroundColor: "#7950f2", color: "#fff" }}
               onClick={handlePrevious}
             >
               Previous
-            </button>
-            <button
+            </button> */}
+
+            <Button
+              backgroundColor="#7950f2"
+              color="#fff"
+              onClick={handlePrevious}
+            >
+              Previous
+            </Button>
+
+            <Button backgroundColor="#7950f2" color="#fff" onClick={handleNext}>
+              Next
+            </Button>
+
+            {/* <button
               style={{ backgroundColor: "#7950f2", color: "#fff" }}
               onClick={handleNext}
             >
               Next
-            </button>
+            </button> */}
           </div>
         </div>
       )}
     </>
+  );
+};
+
+const Button = ({ backgroundColor, color, onClick, children }) => {
+  return (
+    <button
+      style={{ color: color, backgroundColor: backgroundColor }}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 };
 
