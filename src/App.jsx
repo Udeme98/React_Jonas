@@ -1,12 +1,12 @@
 import React from "react";
-import TravelList from "./03-Travel list";
-import FlashCards from "./Exercises/FlashCard/FlashCards";
-import DateCounter from "./Challenges/Date Counter";
+import Accordion from "./Exercises/Accordion";
+// import TravelList from "./03-Travel list";
 
 const App = () => {
   return (
     <div>
-      <TravelList />
+      {/* <TravelList /> */}
+      <Accordion />
     </div>
   );
 };
