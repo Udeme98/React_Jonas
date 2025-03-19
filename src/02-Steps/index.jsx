@@ -33,7 +33,7 @@ const Steps = () => {
           </div>
 
           <p className="message">
-            Step {step}: {messages[step - 1]}
+            Step {step} {messages[step - 1]}
           </p>
 
           <div className="buttons">
