@@ -1,14 +1,10 @@
 import React from "react";
-import Accordion from "./Exercises/Accordion";
-import Steps from "./02-Steps";
-// import TravelList from "./03-Travel list";
+import Eat from "./04-Eat-and-Split";
 
 const App = () => {
   return (
     <div>
-      {/* <TravelList /> */}
-      <Accordion />
-      {/* <Steps /> */}
+      <Eat />
     </div>
   );
 };
