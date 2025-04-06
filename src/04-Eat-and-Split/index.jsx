@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./eat.css";
 import initialFriends from "./friends";
 // console.log(initialFriends);
 
 const Eat = () => {
+  const [showAddFriend, setShowAddFriend] = useState(false);
+
+  const handleShowFriend = () => {
+    setShowAddFriend((prev) => !prev);
+  };
   return (
     <div className="app">
       <div className="sidebar">
         <FriendsList friends={initialFriends} />
-        <FormAddFriend />
-        <Button>Add Friend</Button>
+        {showAddFriend && <FormAddFriend />}
+        <Button onClick={handleShowFriend}>
+          {showAddFriend ? "Close" : "Add Friend"}
+        </Button>
       </div>
       <FormSplitBill />
     </div>
@@ -51,8 +58,12 @@ function Friend({ friend }) {
   );
 }
 
-function Button({ children }) {
-  return <button className="button">{children}</button>;
+function Button({ children, onClick }) {
+  return (
+    <button className="button" onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 function FormAddFriend() {
