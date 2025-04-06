@@ -20,7 +20,7 @@ function FriendsList({ friends }) {
   return (
     <ul>
       {friendss.map((friend) => (
-        <li>{friend.name}</li>
+        <li key={friend.name}>{friend.name}</li>
       ))}
     </ul>
   );
