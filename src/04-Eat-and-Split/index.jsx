@@ -31,6 +31,8 @@ const Eat = () => {
           : friend
       )
     );
+
+    setSelectedFriend(null);
   };
 
   return (
