@@ -1,10 +1,10 @@
 import React from "react";
-import Eat from "./04-Eat-and-Split";
+import UsePopcorn from "./05-usePopcorn";
 
 const App = () => {
   return (
     <div>
-      <Eat />
+      <UsePopcorn />
     </div>
   );
 };
