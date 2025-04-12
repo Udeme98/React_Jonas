@@ -97,6 +97,7 @@ function Main({ children }) {
 }
 
 function Box({ children }) {
+  // function Box({ element }) {
   const [isOpen1, setIsOpen1] = useState(true);
 
   return (
@@ -107,6 +108,7 @@ function Box({ children }) {
       >
         {isOpen1 ? "–" : "+"}
       </button>
+      {/* {isOpen1 && element} */}
       {isOpen1 && children}
     </div>
   );
@@ -211,6 +213,18 @@ export default function UsePopcorn() {
       </NavBar>
 
       <Main>
+        {/* passing in element as props */}
+        {/* <Box element={<MovieList movies={movies} />} />
+        <Box
+          element={
+            <>
+              <WatchSummary watched={watched} />
+              <WatchedMovieList watched={watched} />
+            </>
+          }
+        /> */}
+
+        {/* Passing in children props */}
         <Box>
           <MovieList movies={movies} />
         </Box>
