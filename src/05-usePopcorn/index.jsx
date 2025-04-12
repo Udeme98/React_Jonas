@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./popcorn.css";
+// import "./popcorn.css";
 
 const tempMovieData = [
   {
