@@ -51,12 +51,12 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-function NavBar({ movies }) {
+function NavBar({ children }) {
   return (
     <nav className="nav-bar">
       <Logo />
       <Search />
-      <NumResult movies={movies} />
+      {children}
     </nav>
   );
 }
@@ -92,10 +92,10 @@ function NumResult({ movies }) {
   );
 }
 
-function Main({ movies }) {
+function Main({ children }) {
   return (
     <main className="main">
-      <Box1 movies={movies} />
+      {children}
       <Box2 />
     </main>
   );
@@ -232,8 +232,13 @@ export default function UsePopcorn() {
 
   return (
     <>
-      <NavBar movies={movies} />
-      <Main movies={movies} />
+      <NavBar movies={movies}>
+        <NumResult movies={movies} />
+      </NavBar>
+
+      <Main>
+        <Box1 movies={movies} />
+      </Main>
     </>
   );
 }
