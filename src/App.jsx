@@ -10,7 +10,13 @@ const App = () => {
         maxRating={5}
         messages={["Terrible", "Bad", "Okay", "Good", "Amazing"]}
       />
-      <StarRating maxRating={5} size={25} color="purple" className="test" />
+      <StarRating
+        maxRating={5}
+        size={25}
+        color="purple"
+        className="test"
+        defaultRating={3}
+      />
     </div>
   );
 };
