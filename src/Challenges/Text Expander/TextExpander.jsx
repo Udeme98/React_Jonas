@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import "./textExpander.css";
 
 function TextExpander() {
@@ -25,7 +26,7 @@ function TextExpander() {
         push the boundaries of what's possible.
       </TextExpander2>
 
-      <TextExpander2 buttonInline={false} className="box">
+      <TextExpander2 expanded={true} className="box">
         Space mission have given us incredible insights into our universe and
         have inspired future generations to keep reaching for the stars. Space
         travel is a pretty cool thing to think about. Who knows what we'll
@@ -35,8 +36,28 @@ function TextExpander() {
   );
 }
 
-const TextExpander2 = () => {
-  return <div>TODO</div>;
+const TextExpander2 = ({
+  collapsedNumWords = 10,
+  expandButtonText = "Show more",
+  collapseButtonText = "Show less",
+  buttonColor,
+  expanded = false,
+  className,
+  children,
+}) => {
+  const [isExpanded, setIsExpanded] = useState(expanded);
+  const displayText = isExpanded
+    ? children
+    : children.split(" ").slice(0, collapsedNumWords).join(" ") + "...";
+
+  return (
+    <div className={className}>
+      <span>{displayText}</span>
+      <button onClick={() => setIsExpanded((exp) => !exp)}>
+        {isExpanded ? collapseButtonText : expandButtonText}
+      </button>
+    </div>
+  );
 };
 
 export default TextExpander;
