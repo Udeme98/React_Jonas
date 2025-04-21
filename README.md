@@ -11,3 +11,4 @@ Tutor: Jonas Schmedtmann
 4. State, Events and Forms
 5. Thinking in React: State Management.
 6. Thinking in React: Components, Composition, and Reusability.
+7. How React works behind the scenes.
