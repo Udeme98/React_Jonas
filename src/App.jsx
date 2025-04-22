@@ -1,11 +1,10 @@
 import React from "react";
-
-import TextExpander from "./Challenges/Text Expander/TextExpander";
+import ReactWorks from "./06-How-react-works";
 
 const App = () => {
   return (
     <div>
-      <TextExpander />
+      <ReactWorks />
     </div>
   );
 };
