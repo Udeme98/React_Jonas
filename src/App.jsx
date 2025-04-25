@@ -5,8 +5,8 @@ import Eat from "./04-Eat-and-Split";
 const App = () => {
   return (
     <div>
-      {/* <ReactWorks /> */}
-      <Eat />
+      <ReactWorks />
+      {/* <Eat /> */}
     </div>
   );
 };
