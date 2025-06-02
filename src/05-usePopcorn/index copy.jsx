@@ -202,13 +202,9 @@ function WatchedMovie({ movie }) {
   );
 }
 
-const KEY = "910fecc5";
-
 export default function UsePopcorn() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
-
-  fetch(`http://www.omdbapi.com/?apikey=${KEY}&`);
 
   return (
     <>
